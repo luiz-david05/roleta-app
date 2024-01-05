@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "./App.css"
 
-function App() {
+const Roleta = () => {
+  const [itens, setItens] = useState([]);
+  const [novoItem, setNovoItem] = useState('');
+  const [resultado, setResultado] = useState(null);
+
+  const adicionarItem = () => {
+    if (novoItem.trim() !== '') {
+      setItens([...itens, novoItem]);
+      setNovoItem('');
+    }
+  };
+
+  const girarRoleta = () => {
+    const indiceSorteado = Math.floor(Math.random() * itens.length);
+    setResultado(itens[indiceSorteado]);
+  };
+
+  const esvaziarLista = () => {
+    setItens([]);
+    setResultado(null);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      adicionarItem();
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class='roleta'>
+      <h1>Sorteio</h1>
+      <ol>
+        {itens.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ol>
+      <input
+        type="text"
+        placeholder="Digite um item"
+        value={novoItem}
+        onChange={(e) => setNovoItem(e.target.value)}
+        onKeyPress={handleKeyPress}
+      />
+      <br></br>
+      <button onClick={adicionarItem}>Adicionar</button>
+      <button onClick={girarRoleta}>Girar Roleta</button>
+      <button onClick={esvaziarLista}>Esvaziar Lista</button>
+      {resultado && <p>Resultado: {resultado}</p>}
     </div>
   );
-}
+};
 
-export default App;
+export default Roleta;
