@@ -2,7 +2,6 @@
 
 .roleta {
     display: block;
-    background-color: #f8f8f8;
     padding: 30px;
     text-align: center;
     color: #333;
@@ -55,16 +54,6 @@ button:hover {
     color: #ac7707;
 }
 
-ol {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -106,11 +95,9 @@ ol {
         text-align: left;
         font-size: 1em;
         margin-top: 10%;
-        margin: 20px;
     }
 
     li {
-        margin: 20px;
         font-size: 1.5em;
     }
 }
