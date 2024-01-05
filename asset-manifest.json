@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/roleta-app/static/css/main.c71b8f79.css",
+    "main.css": "/roleta-app/static/css/main.33c8899d.css",
     "main.js": "/roleta-app/static/js/main.af09ea27.js",
     "static/js/787.6f9ce9b7.chunk.js": "/roleta-app/static/js/787.6f9ce9b7.chunk.js",
     "index.html": "/roleta-app/index.html",
-    "main.c71b8f79.css.map": "/roleta-app/static/css/main.c71b8f79.css.map",
+    "main.33c8899d.css.map": "/roleta-app/static/css/main.33c8899d.css.map",
     "main.af09ea27.js.map": "/roleta-app/static/js/main.af09ea27.js.map",
     "787.6f9ce9b7.chunk.js.map": "/roleta-app/static/js/787.6f9ce9b7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c71b8f79.css",
+    "static/css/main.33c8899d.css",
     "static/js/main.af09ea27.js"
   ]
 }
