@@ -32,11 +32,8 @@ const Roleta = () => {
   return (
     <div class='roleta'>
       <h1>Sorteio</h1>
-      <ol>
-        {itens.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ol>
+      <h2>Como usar:</h2>
+      <p>Adicione um elemento por vez, depois realize o sorteio.</p>
       <input
         type="text"
         placeholder="Digite um item"
@@ -44,11 +41,15 @@ const Roleta = () => {
         onChange={(e) => setNovoItem(e.target.value)}
         onKeyPress={handleKeyPress}
       />
-      <br></br>
       <button onClick={adicionarItem}>Adicionar</button>
-      <button onClick={girarRoleta}>Girar Roleta</button>
-      <button onClick={esvaziarLista}>Esvaziar Lista</button>
-      {resultado && <p>Resultado: {resultado}</p>}
+      <button onClick={girarRoleta}>Sortear</button>
+      <ol>
+        {itens.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ol>
+      {resultado && <p>Resultado: <mark>{resultado}</mark></p>}
+      {resultado && <button onClick={esvaziarLista}>Esvaziar Lista</button>}
     </div>
   );
 };
